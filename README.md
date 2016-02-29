@@ -4,4 +4,4 @@ Sharepoint EventHandlerExplorer 2013/2016, tool that allows to register/unregist
 
 ![enter image description here](https://raw.githubusercontent.com/Gennady-G/Gennady-G.github.io/master/EventHandlerExplorer2013.png?raw=true)
 
-View page: [eventhandlerexplorer](http://gennady-g.github.io/eventhandlerexplorer)
+View page: [eventhandlerexplorer](https://Gennady-G.github.io//EventHandlerExplorer)
