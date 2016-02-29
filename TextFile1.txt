@@ -1,0 +1,25 @@
+1>------ Build started: Project: EventHandlerExplorer, Configuration: Debug Any CPU ------
+1>Build started 2/22/2016 12:37:45 AM.
+1>PreBuildEvent:
+1>  taskkill /F /IM EventHandlerExplorer.exe 2>&1 | exit /B 0
+1>ResolveAssemblyReferences:
+1>  No way to resolve conflict between "Microsoft.SharePoint.Security, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" and "Microsoft.SharePoint.Security, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c". Choosing "Microsoft.SharePoint.Security, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" arbitrarily.
+1>  Consider app.config remapping of assembly "Microsoft.SharePoint.Security, Culture=neutral, PublicKeyToken=71e9bce111e9429c" from Version "14.0.0.0" [] to Version "15.0.0.0" [C:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.Security.dll] to solve conflict and get rid of warning.
+1>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(1819,5): warning MSB3276: Found conflicts between different versions of the same dependent assembly. Please set the "AutoGenerateBindingRedirects" property to true in the project file. For more information, see http://go.microsoft.com/fwlink/?LinkId=294190.
+1>CoreResGen:
+1>  No resources are out of date with respect to their source files. Skipping resource generation.
+1>GenerateTargetFrameworkMonikerAttribute:
+1>Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+1>CoreCompile:
+1>  C:\Program Files (x86)\MSBuild\14.0\bin\csc.exe /noconfig /unsafe- /nowarn:1701,1702,2008 /nostdlib+ /errorreport:prompt /warn:4 /doc:bin\Debug\EventHandlerExplorer.XML /define:DEBUG;TRACE /errorendlocation /preferreduilang:en-US /highentropyva+ /reference:"C:\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.SharePoint.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Deployment.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll" /debug+ /debug:full /optimize- /out:obj\Debug\EventHandlerExplorer.exe /ruleset:"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Team Tools\Static Analysis Tools\\Rule Sets\MinimumRecommendedRules.ruleset" /subsystemversion:6.00 /resource:obj\Debug\EventHandlerExplorer.FormMain.resources /resource:obj\Debug\EventHandlerExplorer.Properties.Resources.resources /target:winexe /warnaserror+ /utf8output FormMain.cs FormMain.Designer.cs Program.cs Properties\AssemblyInfo.cs Properties\Resources.Designer.cs Properties\Settings.Designer.cs "C:\Users\Rockie.AMR\AppData\Local\Temp\2\.NETFramework,Version=v4.5.AssemblyAttributes.cs" obj\Debug\\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs obj\Debug\\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs obj\Debug\\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+1>_CopyAppConfigFile:
+1>Skipping target "_CopyAppConfigFile" because all output files are up-to-date with respect to the input files.
+1>CopyFilesToOutputDirectory:
+1>  Copying file from "obj\Debug\EventHandlerExplorer.exe" to "bin\Debug\EventHandlerExplorer.exe".
+1>  EventHandlerExplorer -> C:\_prj\Tools\EventHandlerExplorer\bin\Debug\EventHandlerExplorer.exe
+1>  Copying file from "obj\Debug\EventHandlerExplorer.pdb" to "bin\Debug\EventHandlerExplorer.pdb".
+1>
+1>Build succeeded.
+1>
+1>Time Elapsed 00:00:02.33
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
