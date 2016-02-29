@@ -682,7 +682,7 @@ namespace EventHandlerExplorer
         // Help icon
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            ProcessStartInfo sInfo = new ProcessStartInfo("http://gennady-g.github.io/eventhandlerexplorer");
+            ProcessStartInfo sInfo = new ProcessStartInfo("http://gennady-g.github.io//EventHandlerExplorer/");
             Process.Start(sInfo);
         }
 
