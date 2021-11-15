@@ -318,6 +318,9 @@ namespace EventHandlerExplorer
                         case "ContentType Event Handlers":
                             {
                                 SPContentType item = (SPContentType)e.Node.Parent.Tag;
+
+                                e.Node.Nodes.Clear();
+
                                 foreach (SPEventReceiverDefinition er in item.EventReceivers)
                                 {
                                     TreeNode node = e.Node.Nodes.Add(er.Class + " (" + er.Type.ToString() + ")");
@@ -330,6 +333,9 @@ namespace EventHandlerExplorer
                         case "Web Event Handlers":
                             {
                                 SPWeb item = (SPWeb)e.Node.Parent.Tag;
+
+                                e.Node.Nodes.Clear();
+
                                 foreach (SPEventReceiverDefinition er in item.EventReceivers)
                                 {
                                     TreeNode node = e.Node.Nodes.Add(er.Class + " (" + er.Type.ToString() + ")");
@@ -342,6 +348,9 @@ namespace EventHandlerExplorer
                         case "Lib Event Handlers":
                             {
                                 SPDocumentLibrary item = (SPDocumentLibrary)e.Node.Parent.Tag;
+
+                                e.Node.Nodes.Clear();
+
                                 foreach (SPEventReceiverDefinition er in item.EventReceivers)
                                 {
                                     TreeNode node = e.Node.Nodes.Add(er.Class + " (" + er.Type.ToString() + ")");
@@ -354,6 +363,9 @@ namespace EventHandlerExplorer
                         case "Files":
                             {
                                 SPDocumentLibrary item = (SPDocumentLibrary)e.Node.Parent.Tag;
+
+                                e.Node.Nodes.Clear();
+
                                 foreach (SPListItem listItem in item.Items)
                                 {
                                     TreeNode node = e.Node.Nodes.Add(listItem.File.Name);
@@ -369,6 +381,9 @@ namespace EventHandlerExplorer
                         case "List Event Handlers":
                             {
                                 SPList item = (SPList)e.Node.Parent.Tag;
+
+                                e.Node.Nodes.Clear();
+
                                 foreach (SPEventReceiverDefinition er in item.EventReceivers)
                                 {
                                     TreeNode node = e.Node.Nodes.Add(er.Class + " (" + er.Type.ToString() + ")");
@@ -381,6 +396,9 @@ namespace EventHandlerExplorer
                         case "Items":
                             {
                                 SPList item = (SPList)e.Node.Parent.Tag;
+
+                                e.Node.Nodes.Clear();
+
                                 foreach (SPListItem listItem in item.Items)
                                 {
                                     TreeNode node = e.Node.Nodes.Add(listItem.Title);
@@ -398,6 +416,8 @@ namespace EventHandlerExplorer
                                 SPListItem item = (SPListItem)e.Node.Parent.Tag;
                                 SPList list = item.ParentList;
 
+                                e.Node.Nodes.Clear();
+
                                 foreach (SPEventReceiverDefinition er in list.EventReceivers)
                                 {
                                     TreeNode node = e.Node.Nodes.Add(er.Class + " (" + er.Type.ToString() + ")");
@@ -410,6 +430,9 @@ namespace EventHandlerExplorer
                         case "File Event Handlers":
                             {
                                 SPFile item = (SPFile)e.Node.Parent.Tag;
+
+                                e.Node.Nodes.Clear();
+
                                 foreach (SPEventReceiverDefinition er in item.EventReceivers)
                                 {
                                     TreeNode node = e.Node.Nodes.Add(er.Class);
