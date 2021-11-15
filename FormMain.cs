@@ -478,24 +478,36 @@ namespace EventHandlerExplorer
                 if (node.Tag is SPList)
                 {
                     SPList list = (SPList)node.Tag;
-                    list.EventReceivers.Add((SPEventReceiverType)Enum.Parse(typeof(SPEventReceiverType), comboBoxEventType.Text),
-                         textBoxAssemlby.Text, comboBoxClasses.Text);
+                    SPEventReceiverDefinition eventReceiverDefinition = list.EventReceivers.Add();
+                    eventReceiverDefinition.Type = (SPEventReceiverType)Enum.Parse(typeof(SPEventReceiverType), comboBoxEventType.Text);
+                    eventReceiverDefinition.Assembly = textBoxAssemlby.Text;
+                    eventReceiverDefinition.Class = comboBoxClasses.Text;
+                    eventReceiverDefinition.SequenceNumber = Int32.Parse(textBoxSequence.Text);
+                    eventReceiverDefinition.Update();
                     list.Update();
                     flag = true;
                 }
                 if (node.Tag is SPContentType)
                 {
                     SPContentType ct = (SPContentType)node.Tag;
-                    ct.EventReceivers.Add((SPEventReceiverType)Enum.Parse(typeof(SPEventReceiverType), comboBoxEventType.Text),
-                         textBoxAssemlby.Text, comboBoxClasses.Text);
+                    SPEventReceiverDefinition eventReceiverDefinition = ct.EventReceivers.Add();
+                    eventReceiverDefinition.Type = (SPEventReceiverType)Enum.Parse(typeof(SPEventReceiverType), comboBoxEventType.Text);
+                    eventReceiverDefinition.Assembly = textBoxAssemlby.Text;
+                    eventReceiverDefinition.Class = comboBoxClasses.Text;
+                    eventReceiverDefinition.SequenceNumber = Int32.Parse(textBoxSequence.Text);
+                    eventReceiverDefinition.Update();
                     ct.Update();
                     flag = true;
                 }
                 if (node.Tag is SPWeb)
                 {
                     SPWeb w = (SPWeb)node.Tag;
-                    w.EventReceivers.Add((SPEventReceiverType)Enum.Parse(typeof(SPEventReceiverType), comboBoxEventType.Text),
-                         textBoxAssemlby.Text, comboBoxClasses.Text);
+                    SPEventReceiverDefinition eventReceiverDefinition = w.EventReceivers.Add();
+                    eventReceiverDefinition.Type = (SPEventReceiverType)Enum.Parse(typeof(SPEventReceiverType), comboBoxEventType.Text);
+                    eventReceiverDefinition.Assembly = textBoxAssemlby.Text;
+                    eventReceiverDefinition.Class = comboBoxClasses.Text;
+                    eventReceiverDefinition.SequenceNumber = Int32.Parse(textBoxSequence.Text);
+                    eventReceiverDefinition.Update();
                     w.Update();
                     flag = true;
                 }
