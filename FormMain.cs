@@ -318,6 +318,9 @@ namespace EventHandlerExplorer
                         case "ContentType Event Handlers":
                             {
                                 SPContentType item = (SPContentType)e.Node.Parent.Tag;
+
+                                e.Node.Nodes.Clear();
+
                                 foreach (SPEventReceiverDefinition er in item.EventReceivers)
                                 {
                                     TreeNode node = e.Node.Nodes.Add(er.Class + " (" + er.Type.ToString() + ")");
@@ -330,6 +333,9 @@ namespace EventHandlerExplorer
                         case "Web Event Handlers":
                             {
                                 SPWeb item = (SPWeb)e.Node.Parent.Tag;
+
+                                e.Node.Nodes.Clear();
+
                                 foreach (SPEventReceiverDefinition er in item.EventReceivers)
                                 {
                                     TreeNode node = e.Node.Nodes.Add(er.Class + " (" + er.Type.ToString() + ")");
@@ -342,6 +348,9 @@ namespace EventHandlerExplorer
                         case "Lib Event Handlers":
                             {
                                 SPDocumentLibrary item = (SPDocumentLibrary)e.Node.Parent.Tag;
+
+                                e.Node.Nodes.Clear();
+
                                 foreach (SPEventReceiverDefinition er in item.EventReceivers)
                                 {
                                     TreeNode node = e.Node.Nodes.Add(er.Class + " (" + er.Type.ToString() + ")");
@@ -354,6 +363,9 @@ namespace EventHandlerExplorer
                         case "Files":
                             {
                                 SPDocumentLibrary item = (SPDocumentLibrary)e.Node.Parent.Tag;
+
+                                e.Node.Nodes.Clear();
+
                                 foreach (SPListItem listItem in item.Items)
                                 {
                                     TreeNode node = e.Node.Nodes.Add(listItem.File.Name);
@@ -369,6 +381,9 @@ namespace EventHandlerExplorer
                         case "List Event Handlers":
                             {
                                 SPList item = (SPList)e.Node.Parent.Tag;
+
+                                e.Node.Nodes.Clear();
+
                                 foreach (SPEventReceiverDefinition er in item.EventReceivers)
                                 {
                                     TreeNode node = e.Node.Nodes.Add(er.Class + " (" + er.Type.ToString() + ")");
@@ -381,6 +396,9 @@ namespace EventHandlerExplorer
                         case "Items":
                             {
                                 SPList item = (SPList)e.Node.Parent.Tag;
+
+                                e.Node.Nodes.Clear();
+
                                 foreach (SPListItem listItem in item.Items)
                                 {
                                     TreeNode node = e.Node.Nodes.Add(listItem.Title);
@@ -398,6 +416,8 @@ namespace EventHandlerExplorer
                                 SPListItem item = (SPListItem)e.Node.Parent.Tag;
                                 SPList list = item.ParentList;
 
+                                e.Node.Nodes.Clear();
+
                                 foreach (SPEventReceiverDefinition er in list.EventReceivers)
                                 {
                                     TreeNode node = e.Node.Nodes.Add(er.Class + " (" + er.Type.ToString() + ")");
@@ -410,6 +430,9 @@ namespace EventHandlerExplorer
                         case "File Event Handlers":
                             {
                                 SPFile item = (SPFile)e.Node.Parent.Tag;
+
+                                e.Node.Nodes.Clear();
+
                                 foreach (SPEventReceiverDefinition er in item.EventReceivers)
                                 {
                                     TreeNode node = e.Node.Nodes.Add(er.Class);
@@ -478,24 +501,36 @@ namespace EventHandlerExplorer
                 if (node.Tag is SPList)
                 {
                     SPList list = (SPList)node.Tag;
-                    list.EventReceivers.Add((SPEventReceiverType)Enum.Parse(typeof(SPEventReceiverType), comboBoxEventType.Text),
-                         textBoxAssemlby.Text, comboBoxClasses.Text);
+                    SPEventReceiverDefinition eventReceiverDefinition = list.EventReceivers.Add();
+                    eventReceiverDefinition.Type = (SPEventReceiverType)Enum.Parse(typeof(SPEventReceiverType), comboBoxEventType.Text);
+                    eventReceiverDefinition.Assembly = textBoxAssemlby.Text;
+                    eventReceiverDefinition.Class = comboBoxClasses.Text;
+                    eventReceiverDefinition.SequenceNumber = Int32.Parse(textBoxSequence.Text);
+                    eventReceiverDefinition.Update();
                     list.Update();
                     flag = true;
                 }
                 if (node.Tag is SPContentType)
                 {
                     SPContentType ct = (SPContentType)node.Tag;
-                    ct.EventReceivers.Add((SPEventReceiverType)Enum.Parse(typeof(SPEventReceiverType), comboBoxEventType.Text),
-                         textBoxAssemlby.Text, comboBoxClasses.Text);
+                    SPEventReceiverDefinition eventReceiverDefinition = ct.EventReceivers.Add();
+                    eventReceiverDefinition.Type = (SPEventReceiverType)Enum.Parse(typeof(SPEventReceiverType), comboBoxEventType.Text);
+                    eventReceiverDefinition.Assembly = textBoxAssemlby.Text;
+                    eventReceiverDefinition.Class = comboBoxClasses.Text;
+                    eventReceiverDefinition.SequenceNumber = Int32.Parse(textBoxSequence.Text);
+                    eventReceiverDefinition.Update();
                     ct.Update();
                     flag = true;
                 }
                 if (node.Tag is SPWeb)
                 {
                     SPWeb w = (SPWeb)node.Tag;
-                    w.EventReceivers.Add((SPEventReceiverType)Enum.Parse(typeof(SPEventReceiverType), comboBoxEventType.Text),
-                         textBoxAssemlby.Text, comboBoxClasses.Text);
+                    SPEventReceiverDefinition eventReceiverDefinition = w.EventReceivers.Add();
+                    eventReceiverDefinition.Type = (SPEventReceiverType)Enum.Parse(typeof(SPEventReceiverType), comboBoxEventType.Text);
+                    eventReceiverDefinition.Assembly = textBoxAssemlby.Text;
+                    eventReceiverDefinition.Class = comboBoxClasses.Text;
+                    eventReceiverDefinition.SequenceNumber = Int32.Parse(textBoxSequence.Text);
+                    eventReceiverDefinition.Update();
                     w.Update();
                     flag = true;
                 }
