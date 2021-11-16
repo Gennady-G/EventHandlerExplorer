@@ -39,7 +39,7 @@
 
 <p>But deploy using XML feature is unuseful if You have Custom list and don't know its Id, or if You want to register receiver on one special list, instead of all Announcements in the scope. Or if You want to have two different receivers on two Announcements lists. Or by example I could work with remote employer and don't have access to target list at all.</p>
 
-<p>EventHandlerExplorer was created by Patrick Tisseghem for WSS 3.0. Since .NET 4.0 there are two types of GAC, so drag-and-drop doesn't work in Windows 2012. For deploy dll in GAC it is recommended to use powershell:</p>
+<p><strong>EventHandlerExplorer was originally created by Patrick Tisseghem for WSS 3.0</strong>. Since .NET 4.0 there are two types of GAC, so drag-and-drop doesn't work in Windows 2012. For deploy dll in GAC it is recommended to use powershell:</p>
 
 <pre style='color:#000000;background:#ffffff;'><span style='color:#bb7977; '>[System.Reflection.Assembly]</span><span style='color:#44aadd; '>::</span><span style='color:#005fd2; '>Load</span><span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>System.EnterpriseServices, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = b03f5f7f11d50a3a</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#44aadd; '>;</span>
 <span style='color:#797997; '>$publish</span> <span style='color:#44aadd; '>=</span> <span style='color:#666616; '>New-Object</span> <span style='color:#0000e6; '>System.EnterpriseServices.Internal.Publish</span><span style='color:#44aadd; '>;</span>
